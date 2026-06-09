@@ -33,6 +33,7 @@ tail -n +2 "$results_dir/joblog" | while IFS='	' read -r seq host starttime runt
     fi
 
     GH_TOKEN="${GITHUB_TOKEN}" gh api \
+       --silent \
        --method POST \
        -H "Accept: application/vnd.github+json" \
        /repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA} \
