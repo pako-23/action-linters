@@ -1,6 +1,14 @@
 ---
-name: Test
-on: push
+name: Lint Codebase
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+permissions: {}
 
 jobs:
   lint:
