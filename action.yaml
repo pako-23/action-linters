@@ -1,0 +1,12 @@
+---
+name: Code Linters
+description: A collection of linters and code analyzers to validate code.
+author: pako-23 <pasqualepolverino98@gmail.com>
+
+branding:
+  icon: shield
+  color: blue
+
+runs:
+  using: docker
+  image: docker://ghcr.io/pako-23/action-linters:v0.0.1
