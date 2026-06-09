@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     chmod +x /usr/local/bin/hadolint && \
     wget -qO /tmp/actionlint.tar.gz https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz && \
     tar xzf /tmp/actionlint.tar.gz -C /usr/local/bin/ actionlint && \
-    npm install -g markdownlint-cli
+    npm install -g markdownlint-cli@0.48.0
 
 COPY scripts/linters/ /usr/local/bin/linters/
 COPY scripts/entrypoint.sh /entrypoint.sh
