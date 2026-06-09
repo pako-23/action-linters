@@ -1,10 +1,23 @@
 #!/bin/sh -u
 
 results_dir=/tmp/results
-linters=$(find /usr/local/bin/linters/ -name '*.sh' -exec basename -s .sh {} \;)
+all_linters=$(find /usr/local/bin/linters/ -name '*.sh' -exec basename -s .sh {} \;)
+
+linters=
+for linter in $all_linters; do
+    env_var=$(echo "$linter" | tr '[:lower:]-' '[:upper:]_')
+    eval "enabled=\"\${${env_var}:-false}\""
+    if test "$enabled" = "true"; then
+        linters="$linters $linter"
+    fi
+done
+
+if test -z "$linters"; then
+    echo "No linters enabled. Set environment variables like ANSIBLE_LINT=true." | tee -a "$GITHUB_STEP_SUMMARY"
+    exit 0
+fi
 
 mkdir -p "$results_dir"
-
 parallel --will-cite \
          --tag \
          --jobs +0 \

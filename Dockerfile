@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     'py3-pip~=24' \
     'wget~=1.24' \
     'yamllint~=1.35' && \
-    pip3 install --no-cache-dir --break-system-packages ansible-lint>=1.38 && \
+    pip3 install --no-cache-dir --break-system-packages ansible-lint==26.4.0 && \
     wget -qO /usr/local/bin/hadolint \
     https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64 \
     && chmod +x /usr/local/bin/hadolint
