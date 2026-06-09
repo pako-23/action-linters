@@ -1,7 +1,7 @@
 # Code Linters
 
 [![Latest Release](https://img.shields.io/github/v/release/pako-23/action-linters?sort=semver)](https://github.com/pako-23/action-linters/releases/latest)
-![Linter](https://github.com/actions/action-linters/actions/workflows/linter.yml/badge.svg)
+[![Lint Codebase](https://github.com/pako-23/action-linters/actions/workflows/linter.yaml/badge.svg)](https://github.com/pako-23/action-linters/actions/workflows/linter.yaml)
 [![License](https://img.shields.io/github/license/pako-23/action-linters)](LICENSE)
 
 A GitHub Action that runs a set of linters on your codebase. The
